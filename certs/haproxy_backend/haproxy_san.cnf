@@ -1,0 +1,7 @@
+[ v3_req ]
+subjectAltName = @alt_names
+[ alt_names ]
+DNS.1 = mqtt.haproxy.lab
+DNS.2 = mqtt.haproxy
+DNS.3 = haproxy
+IP.1 = 127.0.0.1

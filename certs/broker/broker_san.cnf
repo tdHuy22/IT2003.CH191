@@ -1,0 +1,10 @@
+[ v3_req ]
+subjectAltName = @alt_names
+[ alt_names ]
+DNS.1 = broker
+DNS.2 = mqtt.broker.lab
+DNS.3 = mqtt.broker
+DNS.4 = broker1
+DNS.5 = broker2
+DNS.6 = broker3
+IP.1 = 127.0.0.1

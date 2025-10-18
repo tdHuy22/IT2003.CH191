@@ -1,0 +1,82 @@
+services:
+  haproxy:
+    image: haproxy:latest
+    container_name: haproxy
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8883:8888"
+      - "127.0.0.1:8404:8404" # stats
+      - "127.0.0.1:18884:18884"
+    volumes:
+      - ./mqtt-layer/haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
+      - ./certs/haproxy_backend:/usr/local/etc/haproxy/certs_backend
+      - ./certs/haproxy_frontend:/usr/local/etc/haproxy/certs_frontend
+    networks:
+      - iot_net
+    depends_on:
+      - broker1
+      - broker2
+      - broker3
+  broker1:
+    image: eclipse-mosquitto:latest
+    container_name: broker1
+    restart: unless-stopped
+    volumes:
+      - ./mqtt-layer/broker1/mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - ./mqtt-layer/broker1/data:/mosquitto/data
+      - ./mqtt-layer/broker1/log:/mosquitto/log
+      - ./certs/broker:/mosquitto/certs
+    networks:
+      - iot_net
+  broker2:
+    image: eclipse-mosquitto:latest
+    container_name: broker2
+    restart: unless-stopped
+    volumes:
+      - ./mqtt-layer/broker2/mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - ./mqtt-layer/broker2/data:/mosquitto/data
+      - ./mqtt-layer/broker2/log:/mosquitto/log
+      - ./certs/broker:/mosquitto/certs
+    networks:
+      - iot_net
+  broker3:
+    image: eclipse-mosquitto:latest
+    container_name: broker3
+    restart: unless-stopped
+    volumes:
+      - ./mqtt-layer/broker3/mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - ./mqtt-layer/broker3/data:/mosquitto/data
+      - ./mqtt-layer/broker3/log:/mosquitto/log
+      - ./certs/broker:/mosquitto/certs
+    networks:
+      - iot_net
+
+  backend:
+    build: ./backend
+    container_name: backend
+    restart: unless-stopped
+    volumes:
+      - ./certs/express:/app/certs/express:ro
+      - ./backend/logs:/app/logs
+    depends_on:
+      - haproxy
+    ports:
+      - "127.0.0.1:3001:3001"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - iot_net
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8080:80"
+    depends_on:
+      - backend
+    networks:
+      - iot_net
+
+networks:
+  iot_net:
+    driver: bridge

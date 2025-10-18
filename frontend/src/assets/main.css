@@ -1,0 +1,141 @@
+:root {
+  --bg-start: #f5f7fa;
+  --bg-end: #e4ebf1;
+  --card-bg: #ffffff;
+  --accent: #1b5e20;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, var(--bg-start) 0%, var(--bg-end) 100%);
+  color: #222;
+}
+
+#app {
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--accent);
+  margin: 0 0 2rem 0;
+  text-align: center;
+}
+
+.dashboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  gap: 1.5rem;
+  max-width: 1600px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 1rem 0;
+}
+
+.chart-container {
+  background: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  padding: 1rem 1.2rem;
+  flex: 1 1 400px;
+
+  min-width: 400px;
+
+  max-width: 550px;
+
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chart-container:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.chart-container h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.chart-container canvas {
+  width: 100% !important;
+  height: calc(100% - 40px) !important;
+}
+
+.broker-status {
+  margin-top: 2rem;
+  background: white;
+  border-radius: 999px;
+  padding: 0.4rem 1.2rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.broker-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.broker-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.broker-dot.UP {
+  background: #4caf50;
+  box-shadow: 0 0 6px rgba(76, 175, 80, 0.45);
+}
+
+.broker-dot.DOWN {
+  background: #f44336;
+  box-shadow: 0 0 6px rgba(244, 67, 54, 0.45);
+}
+
+@media (max-width: 1200px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .chart-container {
+    height: 350px;
+  }
+}
+
+@media (max-width: 900px) {
+  .dashboard-container {
+    flex-wrap: wrap;
+  }
+
+  .chart-container {
+    flex: 1 1 100%;
+    width: 90%;
+    height: 360px;
+  }
+}
