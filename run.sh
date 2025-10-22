@@ -7,7 +7,7 @@ for i in 1 2 3; do
 done
 
 echo "Clean up old docker containers..."
-docker-compose down --volumes --remove-orphans
+docker compose down --volumes --remove-orphans
 
 echo "Running docker-compose..."
-docker-compose up --build
+docker compose up

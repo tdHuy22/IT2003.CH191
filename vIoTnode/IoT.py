@@ -32,11 +32,11 @@ import paho.mqtt.client as mqtt
 from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 # --- Config / env ---
-BROKER_HOST = os.getenv("MQTT_BROKER_HOST", "127.0.0.1")
-BROKER_PORT = int(os.getenv("MQTT_BROKER_PORT", "8883"))
-CLIENT_CERT = os.getenv("MQTT_CLIENT_CERT", "../certs/client1/client1.crt")
-CLIENT_KEY = os.getenv("MQTT_CLIENT_KEY", "../certs/client1/client1.key")
-CA_CERT = os.getenv("MQTT_CA_CERT", "../certs/client1/ca_client.crt")
+BROKER_HOST = os.getenv("MQTT_BROKER_HOST")
+BROKER_PORT = int(os.getenv("MQTT_BROKER_PORT"))
+CLIENT_CERT = os.getenv("MQTT_CLIENT_CERT")
+CLIENT_KEY = os.getenv("MQTT_CLIENT_KEY")
+CA_CERT = os.getenv("MQTT_CA_CERT")
 
 if not CLIENT_CERT or not CLIENT_KEY or not CA_CERT:
     raise SystemExit("Please set MQTT_CLIENT_CERT, MQTT_CLIENT_KEY and MQTT_CA_CERT env vars")

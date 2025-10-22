@@ -4,7 +4,7 @@ services:
     container_name: haproxy
     restart: unless-stopped
     ports:
-      - "127.0.0.1:8883:8888"
+      - "8883:8888"
       - "127.0.0.1:8404:8404" # stats
       - "127.0.0.1:18884:18884"
     volumes:
@@ -64,6 +64,8 @@ services:
       - "127.0.0.1:3001:3001"
     environment:
       - NODE_ENV=production
+      - AES_SHARED_KEY=I5040PMqS3Xf027QdzLRaD61mb6COAPP6eWQAgiWqnY=
+      - AAD=iot-lab-shared
     networks:
       - iot_net
   frontend:

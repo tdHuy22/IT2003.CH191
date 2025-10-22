@@ -57,6 +57,7 @@ DNS.1 = mqtt.haproxy.lab
 DNS.2 = mqtt.haproxy
 DNS.3 = haproxy
 IP.1 = 127.0.0.1
+IP.2 = 192.168.2.100
 EOF
 
 openssl x509 -req -in haproxy_backend.csr -CA ca_org.crt -CAkey ca_org.key -CAcreateserial \
@@ -126,8 +127,8 @@ mkdir -p ca_org ca_client
 mv ca_org.crt ca_org.key ca_org.srl ca_org
 mv ca_client.crt ca_client.key ca_client.srl ca_client
 
-echo "Generating AES key..."
-openssl rand -base64 32 > aes_shared.key
+# echo "Generating AES key..."
+# openssl rand -base64 32 > aes_shared.key
 
 
 echo "All certs generated in $OUTDIR"

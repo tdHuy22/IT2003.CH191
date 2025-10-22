@@ -8,8 +8,6 @@ const cors = require("cors");
 const { parse: csvParse } = require("csv-parse/sync");
 const crypto = require("crypto");
 
-require("dotenv").config();
-
 const KEY = Buffer.from(process.env.AES_SHARED_KEY, "base64");
 if (!KEY || KEY.length !== 32) {
   throw new Error("Invalid AES_SHARED_KEY");
