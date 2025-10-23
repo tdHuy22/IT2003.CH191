@@ -4,6 +4,7 @@ services:
     container_name: haproxy
     restart: unless-stopped
     ports:
+      - "1883:1883"
       - "8883:8888"
       - "127.0.0.1:8404:8404" # stats
       - "127.0.0.1:18884:18884"

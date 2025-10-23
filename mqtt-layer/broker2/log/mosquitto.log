@@ -1,827 +1,119 @@
-1761194838: mosquitto version 2.0.22 starting
-1761194838: Config loaded from /mosquitto/config/mosquitto.conf.
-1761194838: Opening ipv4 listen socket on port 8883.
-1761194838: Opening ipv6 listen socket on port 8883.
-1761194838: Bridge local.da4a3666e21a.bridge_broker2_to_broker1 doing local SUBSCRIBE on topic sensor/#
-1761194838: Connecting bridge bridge_broker2_to_broker1 (broker1:8883)
-1761194838: Bridge da4a3666e21a.bridge_broker2_to_broker1 sending CONNECT
-1761194838: Bridge local.da4a3666e21a.bridge_broker2_to_broker3 doing local SUBSCRIBE on topic sensor/#
-1761194838: Connecting bridge bridge_broker2_to_broker3 (broker3:8883)
-1761194838: Bridge da4a3666e21a.bridge_broker2_to_broker3 sending CONNECT
-1761194838: mosquitto version 2.0.22 running
-1761194838: New connection from 172.19.0.3:33078 on port 8883.
-1761194838: New bridge connected from 172.19.0.3:33078 as 13cb088762be.bridge_broker3_to_broker2 (p2, c1, k60, u'broker').
-1761194838: No will message specified.
-1761194838: Sending CONNACK to 13cb088762be.bridge_broker3_to_broker2 (0, 0)
-1761194838: Received UNSUBSCRIBE from 13cb088762be.bridge_broker3_to_broker2
-1761194838: 	broker3/sensor/#
-1761194838: 13cb088762be.bridge_broker3_to_broker2 broker3/sensor/#
-1761194838: Sending UNSUBACK to 13cb088762be.bridge_broker3_to_broker2
-1761194838: Received CONNACK on connection local.da4a3666e21a.bridge_broker2_to_broker1.
-1761194838: Bridge local.da4a3666e21a.bridge_broker2_to_broker1 sending UNSUBSCRIBE (Mid: 1, Topic: broker2/sensor/#)
-1761194838: Received UNSUBACK from local.da4a3666e21a.bridge_broker2_to_broker1
-1761194838: Received CONNACK on connection local.da4a3666e21a.bridge_broker2_to_broker3.
-1761194838: Bridge local.da4a3666e21a.bridge_broker2_to_broker3 sending UNSUBSCRIBE (Mid: 1, Topic: broker2/sensor/#)
-1761194838: Received UNSUBACK from local.da4a3666e21a.bridge_broker2_to_broker3
-1761194844: New connection from 172.19.0.2:47188 on port 8883.
-1761194844: New bridge connected from 172.19.0.2:47188 as 70661cbd3001.bridge_broker1_to_broker2 (p2, c1, k60, u'broker').
-1761194844: No will message specified.
-1761194844: Sending CONNACK to 70661cbd3001.bridge_broker1_to_broker2 (0, 0)
-1761194844: Received UNSUBSCRIBE from 70661cbd3001.bridge_broker1_to_broker2
-1761194844: 	broker1/sensor/#
-1761194844: 70661cbd3001.bridge_broker1_to_broker2 broker1/sensor/#
-1761194844: Sending UNSUBACK to 70661cbd3001.bridge_broker1_to_broker2
-1761194898: Sending PINGREQ to local.da4a3666e21a.bridge_broker2_to_broker1
-1761194898: Sending PINGREQ to local.da4a3666e21a.bridge_broker2_to_broker3
-1761194898: Received PINGRESP from local.da4a3666e21a.bridge_broker2_to_broker1
-1761194898: Received PINGRESP from local.da4a3666e21a.bridge_broker2_to_broker3
-1761194898: Received PINGREQ from 13cb088762be.bridge_broker3_to_broker2
-1761194898: Sending PINGRESP to 13cb088762be.bridge_broker3_to_broker2
-1761194899: New connection from 172.19.0.5:52432 on port 8883.
-1761194899: New client connected from 172.19.0.5:52432 as client1 (p2, c1, k60, u'mqtt.haproxy.lab').
-1761194899: No will message specified.
-1761194899: Sending CONNACK to client1 (0, 0)
-1761194899: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761194899: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761194899: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761194901: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761194901: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194901: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194903: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761194903: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194903: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194904: Received PINGREQ from 70661cbd3001.bridge_broker1_to_broker2
-1761194904: Sending PINGRESP to 70661cbd3001.bridge_broker1_to_broker2
-1761194907: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761194907: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761194907: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761194908: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761194908: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761194908: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761194912: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761194912: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194912: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194915: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761194915: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194915: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194918: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761194918: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194918: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194920: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761194920: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194920: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194924: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761194924: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194924: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194927: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761194927: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194927: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194930: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761194930: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761194930: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761194932: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761194932: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194932: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194937: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761194937: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761194937: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761194941: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761194941: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761194941: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761194943: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761194943: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761194943: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761194944: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761194944: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761194944: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761194948: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761194948: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194948: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194951: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761194951: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761194951: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761194954: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761194954: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194954: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194955: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761194955: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194955: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194958: Sending PINGREQ to local.da4a3666e21a.bridge_broker2_to_broker1
-1761194958: Sending PINGREQ to local.da4a3666e21a.bridge_broker2_to_broker3
-1761194958: Received PINGREQ from 13cb088762be.bridge_broker3_to_broker2
-1761194958: Sending PINGRESP to 13cb088762be.bridge_broker3_to_broker2
-1761194958: Received PINGRESP from local.da4a3666e21a.bridge_broker2_to_broker1
-1761194958: Received PINGRESP from local.da4a3666e21a.bridge_broker2_to_broker3
-1761194959: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761194959: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194959: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194960: Received PINGREQ from client1
-1761194960: Sending PINGRESP to client1
-1761194961: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761194961: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194961: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194964: Received PINGREQ from 70661cbd3001.bridge_broker1_to_broker2
-1761194964: Sending PINGRESP to 70661cbd3001.bridge_broker1_to_broker2
-1761194965: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761194965: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761194965: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761194969: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761194969: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194969: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194972: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761194972: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761194972: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761194975: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761194975: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761194975: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761194978: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761194978: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194978: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194981: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761194981: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194981: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194983: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761194983: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194983: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194986: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761194986: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194986: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194988: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761194988: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194988: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194991: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761194991: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194991: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761194995: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761194995: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761194995: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195000: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195000: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195000: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195005: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195005: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195005: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195006: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195006: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195006: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195008: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195008: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195008: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195010: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195010: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195010: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195013: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195013: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195013: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195015: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195015: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195015: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195018: Received PINGREQ from 13cb088762be.bridge_broker3_to_broker2
-1761195018: Sending PINGRESP to 13cb088762be.bridge_broker3_to_broker2
-1761195018: Sending PINGREQ to local.da4a3666e21a.bridge_broker2_to_broker1
-1761195018: Sending PINGREQ to local.da4a3666e21a.bridge_broker2_to_broker3
-1761195018: Received PINGRESP from local.da4a3666e21a.bridge_broker2_to_broker1
-1761195018: Received PINGRESP from local.da4a3666e21a.bridge_broker2_to_broker3
-1761195019: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195019: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195019: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195021: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195021: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195021: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195021: Received PINGREQ from client1
-1761195021: Sending PINGRESP to client1
-1761195022: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195022: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195022: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195024: Received PINGREQ from 70661cbd3001.bridge_broker1_to_broker2
-1761195024: Sending PINGRESP to 70661cbd3001.bridge_broker1_to_broker2
-1761195026: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195026: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195026: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195029: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195029: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195029: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195032: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195032: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195032: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195035: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195035: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195035: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195039: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195039: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195039: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195043: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195043: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195043: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195046: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195046: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195046: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195050: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195050: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195050: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195051: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195051: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195051: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195054: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195054: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195054: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195056: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195056: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195056: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195058: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195058: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195058: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195060: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195060: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195060: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195065: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195065: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195065: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195066: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195066: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195066: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195069: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195069: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195069: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195073: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195073: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195073: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195076: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195076: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195076: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195078: Received PINGREQ from 13cb088762be.bridge_broker3_to_broker2
-1761195078: Sending PINGRESP to 13cb088762be.bridge_broker3_to_broker2
-1761195078: Sending PINGREQ to local.da4a3666e21a.bridge_broker2_to_broker1
-1761195078: Sending PINGREQ to local.da4a3666e21a.bridge_broker2_to_broker3
-1761195078: Received PINGRESP from local.da4a3666e21a.bridge_broker2_to_broker1
-1761195078: Received PINGRESP from local.da4a3666e21a.bridge_broker2_to_broker3
-1761195080: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195080: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195080: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195081: Received PINGREQ from client1
-1761195081: Sending PINGRESP to client1
-1761195081: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195081: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195081: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195084: Received PINGREQ from 70661cbd3001.bridge_broker1_to_broker2
-1761195084: Sending PINGRESP to 70661cbd3001.bridge_broker1_to_broker2
-1761195085: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195085: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195085: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195089: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195089: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195089: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195092: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195092: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195092: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195096: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195096: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195096: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195099: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195099: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195099: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195101: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195101: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195101: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195102: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195102: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195102: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195107: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195107: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195107: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195111: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195111: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195111: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195115: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195115: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195115: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195119: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195119: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195119: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195123: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195123: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195123: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195126: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195126: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195126: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195129: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195129: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195129: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195132: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195132: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195132: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195136: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195136: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195136: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195138: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195138: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195138: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195138: Sending PINGREQ to local.da4a3666e21a.bridge_broker2_to_broker1
-1761195138: Sending PINGREQ to local.da4a3666e21a.bridge_broker2_to_broker3
-1761195138: Received PINGREQ from 13cb088762be.bridge_broker3_to_broker2
-1761195138: Sending PINGRESP to 13cb088762be.bridge_broker3_to_broker2
-1761195138: Received PINGRESP from local.da4a3666e21a.bridge_broker2_to_broker1
-1761195138: Received PINGRESP from local.da4a3666e21a.bridge_broker2_to_broker3
-1761195140: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195140: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195140: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195142: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195142: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195142: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195142: Received PINGREQ from client1
-1761195142: Sending PINGRESP to client1
-1761195144: Received PINGREQ from 70661cbd3001.bridge_broker1_to_broker2
-1761195144: Sending PINGRESP to 70661cbd3001.bridge_broker1_to_broker2
-1761195146: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195146: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195146: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195150: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195150: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195150: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195151: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195151: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195151: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195154: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195154: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195154: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195158: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195158: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195158: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195160: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195160: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195160: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195163: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195163: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195163: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195166: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195166: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195166: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195170: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195170: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195170: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195172: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195172: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195172: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195174: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195174: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195174: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195177: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195177: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195177: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195180: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195180: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195180: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195181: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195181: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195181: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195183: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195183: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195183: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195186: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195186: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195186: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195189: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195189: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195189: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195192: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195192: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195192: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195193: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195193: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195193: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195196: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195196: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195196: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195198: Sending PINGREQ to local.da4a3666e21a.bridge_broker2_to_broker1
-1761195198: Sending PINGREQ to local.da4a3666e21a.bridge_broker2_to_broker3
-1761195198: Received PINGREQ from 13cb088762be.bridge_broker3_to_broker2
-1761195198: Sending PINGRESP to 13cb088762be.bridge_broker3_to_broker2
-1761195198: Received PINGRESP from local.da4a3666e21a.bridge_broker2_to_broker1
-1761195198: Received PINGRESP from local.da4a3666e21a.bridge_broker2_to_broker3
-1761195201: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195201: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195201: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195203: Received PINGREQ from client1
-1761195203: Sending PINGRESP to client1
-1761195203: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195203: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195203: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195204: Received PINGREQ from 70661cbd3001.bridge_broker1_to_broker2
-1761195204: Sending PINGRESP to 70661cbd3001.bridge_broker1_to_broker2
-1761195208: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195208: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195208: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195212: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195212: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195212: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195215: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195215: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195215: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195218: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195218: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195218: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195219: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195219: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195219: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195222: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195222: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195222: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195225: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195225: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195225: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195226: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195226: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195226: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195230: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195230: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195230: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195233: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195233: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195233: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195235: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195235: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195235: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195237: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195237: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195237: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195239: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195239: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195239: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195243: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195243: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195243: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195246: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195246: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195246: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195249: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195249: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195249: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195254: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195254: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195254: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195255: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195255: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195255: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195258: Sending PINGREQ to local.da4a3666e21a.bridge_broker2_to_broker1
-1761195258: Sending PINGREQ to local.da4a3666e21a.bridge_broker2_to_broker3
-1761195258: Received PINGREQ from 13cb088762be.bridge_broker3_to_broker2
-1761195258: Sending PINGRESP to 13cb088762be.bridge_broker3_to_broker2
-1761195258: Received PINGRESP from local.da4a3666e21a.bridge_broker2_to_broker3
-1761195258: Received PINGRESP from local.da4a3666e21a.bridge_broker2_to_broker1
-1761195258: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195258: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195258: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195262: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195262: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195262: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195263: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195263: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195263: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195263: Received PINGREQ from client1
-1761195263: Sending PINGRESP to client1
-1761195264: Received PINGREQ from 70661cbd3001.bridge_broker1_to_broker2
-1761195264: Sending PINGRESP to 70661cbd3001.bridge_broker1_to_broker2
-1761195268: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195268: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195268: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195273: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195273: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195273: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195275: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195275: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195275: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195279: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195279: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195279: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195283: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195283: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195283: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195284: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195284: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195284: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195289: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195289: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195289: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195293: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195293: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195293: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195297: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195297: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195297: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195299: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195299: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195299: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195304: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195304: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195304: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195308: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195308: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195308: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195311: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195311: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195311: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195315: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195315: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195315: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195317: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195317: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195317: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195318: Received PINGREQ from 13cb088762be.bridge_broker3_to_broker2
-1761195318: Sending PINGRESP to 13cb088762be.bridge_broker3_to_broker2
-1761195318: Sending PINGREQ to local.da4a3666e21a.bridge_broker2_to_broker1
-1761195318: Sending PINGREQ to local.da4a3666e21a.bridge_broker2_to_broker3
-1761195318: Received PINGRESP from local.da4a3666e21a.bridge_broker2_to_broker1
-1761195318: Received PINGRESP from local.da4a3666e21a.bridge_broker2_to_broker3
-1761195319: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195319: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195319: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195322: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195322: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195322: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195324: Received PINGREQ from 70661cbd3001.bridge_broker1_to_broker2
-1761195324: Sending PINGRESP to 70661cbd3001.bridge_broker1_to_broker2
-1761195324: Received PINGREQ from client1
-1761195324: Sending PINGRESP to client1
-1761195324: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195324: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195324: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195329: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195329: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195329: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195331: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195331: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195331: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195333: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195333: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195333: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195334: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195334: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195334: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195337: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195337: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195337: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195338: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195338: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195338: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195340: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195340: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195340: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195343: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195343: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195343: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195348: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195348: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195348: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195350: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195350: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195350: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195352: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195352: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195352: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195356: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195356: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195356: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195359: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195359: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195359: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195361: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195361: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195361: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195365: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195365: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195365: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195370: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195370: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195370: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195373: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195373: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195373: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195375: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195375: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195375: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195378: Received PINGREQ from 13cb088762be.bridge_broker3_to_broker2
-1761195378: Sending PINGRESP to 13cb088762be.bridge_broker3_to_broker2
-1761195378: Sending PINGREQ to local.da4a3666e21a.bridge_broker2_to_broker1
-1761195378: Sending PINGREQ to local.da4a3666e21a.bridge_broker2_to_broker3
-1761195378: Received PINGRESP from local.da4a3666e21a.bridge_broker2_to_broker1
-1761195378: Received PINGRESP from local.da4a3666e21a.bridge_broker2_to_broker3
-1761195378: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195378: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195378: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195382: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195382: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195382: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195384: Received PINGREQ from 70661cbd3001.bridge_broker1_to_broker2
-1761195384: Sending PINGRESP to 70661cbd3001.bridge_broker1_to_broker2
-1761195385: Received PINGREQ from client1
-1761195385: Sending PINGRESP to client1
-1761195386: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195386: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195386: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195390: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195390: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195390: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195394: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195394: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195394: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195395: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195395: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195395: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195399: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195399: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195399: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195403: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195403: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195403: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195405: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195405: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195405: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195406: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195406: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195406: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195408: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195408: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195408: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195411: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195411: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195411: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195412: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195412: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195412: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195414: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195414: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195414: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195417: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195417: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195417: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195419: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195419: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195419: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195424: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195424: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195424: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195427: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195427: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195427: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195431: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195431: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195431: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195433: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195433: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195433: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195436: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195436: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195436: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195437: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195437: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195437: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195438: Sending PINGREQ to local.da4a3666e21a.bridge_broker2_to_broker1
-1761195438: Sending PINGREQ to local.da4a3666e21a.bridge_broker2_to_broker3
-1761195438: Received PINGREQ from 13cb088762be.bridge_broker3_to_broker2
-1761195438: Sending PINGRESP to 13cb088762be.bridge_broker3_to_broker2
-1761195438: Received PINGRESP from local.da4a3666e21a.bridge_broker2_to_broker1
-1761195438: Received PINGRESP from local.da4a3666e21a.bridge_broker2_to_broker3
-1761195441: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195441: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195441: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195444: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195444: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195444: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195444: Received PINGREQ from 70661cbd3001.bridge_broker1_to_broker2
-1761195444: Sending PINGRESP to 70661cbd3001.bridge_broker1_to_broker2
-1761195446: Received PINGREQ from client1
-1761195446: Sending PINGRESP to client1
-1761195447: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195447: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195447: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195448: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195448: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195448: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195453: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195453: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195453: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195458: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195458: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195458: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195459: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195459: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195459: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195462: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195462: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195462: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195464: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195464: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195464: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195468: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195468: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195468: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195473: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195473: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195473: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195474: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195474: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195474: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195479: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195479: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195479: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195482: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195482: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195482: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195486: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195486: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195486: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195490: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195490: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195490: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195492: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195492: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195492: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195494: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195494: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195494: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195497: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195497: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195497: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195498: Sending PINGREQ to local.da4a3666e21a.bridge_broker2_to_broker1
-1761195498: Sending PINGREQ to local.da4a3666e21a.bridge_broker2_to_broker3
-1761195498: Received PINGREQ from 13cb088762be.bridge_broker3_to_broker2
-1761195498: Sending PINGRESP to 13cb088762be.bridge_broker3_to_broker2
-1761195498: Received PINGRESP from local.da4a3666e21a.bridge_broker2_to_broker3
-1761195498: Received PINGRESP from local.da4a3666e21a.bridge_broker2_to_broker1
-1761195500: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195500: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195500: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195504: Received PINGREQ from 70661cbd3001.bridge_broker1_to_broker2
-1761195504: Sending PINGRESP to 70661cbd3001.bridge_broker1_to_broker2
-1761195505: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195505: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195505: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195507: Received PINGREQ from client1
-1761195507: Sending PINGRESP to client1
-1761195509: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195509: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195509: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195514: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195514: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195514: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195516: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195516: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195516: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195521: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195521: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195521: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195522: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195522: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195522: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195523: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195523: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195523: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195527: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195527: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195527: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195530: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195530: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195530: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195534: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195534: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195534: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195536: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195536: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195536: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195539: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195539: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195539: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195543: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195543: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195543: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195547: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195547: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195547: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195550: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195550: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195550: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195551: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
-1761195551: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195551: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
-1761195554: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195554: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195554: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195556: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195556: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195556: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195558: Received PINGREQ from 13cb088762be.bridge_broker3_to_broker2
-1761195558: Sending PINGRESP to 13cb088762be.bridge_broker3_to_broker2
-1761195558: Sending PINGREQ to local.da4a3666e21a.bridge_broker2_to_broker1
-1761195558: Sending PINGREQ to local.da4a3666e21a.bridge_broker2_to_broker3
-1761195558: Received PINGRESP from local.da4a3666e21a.bridge_broker2_to_broker1
-1761195558: Received PINGRESP from local.da4a3666e21a.bridge_broker2_to_broker3
-1761195560: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
-1761195560: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195560: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
-1761195563: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
-1761195563: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195563: Sending PUBLISH to local.da4a3666e21a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
-1761195564: Received DISCONNECT from client1
-1761195564: Client client1 disconnected.
-1761195564: Received PINGREQ from 70661cbd3001.bridge_broker1_to_broker2
-1761195564: Sending PINGRESP to 70661cbd3001.bridge_broker1_to_broker2
+1761239194: mosquitto version 2.0.22 starting
+1761239194: Config loaded from /mosquitto/config/mosquitto.conf.
+1761239194: Opening ipv4 listen socket on port 8883.
+1761239194: Opening ipv6 listen socket on port 8883.
+1761239194: Opening ipv4 listen socket on port 1883.
+1761239194: Opening ipv6 listen socket on port 1883.
+1761239194: Bridge local.2d9737a68e6a.bridge_broker2_to_broker1 doing local SUBSCRIBE on topic sensor/#
+1761239194: Connecting bridge bridge_broker2_to_broker1 (broker1:8883)
+1761239194: Bridge 2d9737a68e6a.bridge_broker2_to_broker1 sending CONNECT
+1761239194: Bridge local.2d9737a68e6a.bridge_broker2_to_broker3 doing local SUBSCRIBE on topic sensor/#
+1761239194: Connecting bridge bridge_broker2_to_broker3 (broker3:8883)
+1761239194: Bridge 2d9737a68e6a.bridge_broker2_to_broker3 sending CONNECT
+1761239194: mosquitto version 2.0.22 running
+1761239194: New connection from 172.19.0.4:59768 on port 8883.
+1761239194: New bridge connected from 172.19.0.4:59768 as 7491120c0bb0.bridge_broker3_to_broker2 (p2, c1, k60, u'broker').
+1761239194: No will message specified.
+1761239194: Sending CONNACK to 7491120c0bb0.bridge_broker3_to_broker2 (0, 0)
+1761239194: Received CONNACK on connection local.2d9737a68e6a.bridge_broker2_to_broker1.
+1761239194: Bridge local.2d9737a68e6a.bridge_broker2_to_broker1 sending UNSUBSCRIBE (Mid: 1, Topic: broker2/sensor/#)
+1761239194: Received UNSUBACK from local.2d9737a68e6a.bridge_broker2_to_broker1
+1761239194: Received CONNACK on connection local.2d9737a68e6a.bridge_broker2_to_broker3.
+1761239194: Bridge local.2d9737a68e6a.bridge_broker2_to_broker3 sending UNSUBSCRIBE (Mid: 1, Topic: broker2/sensor/#)
+1761239194: Received UNSUBACK from local.2d9737a68e6a.bridge_broker2_to_broker3
+1761239194: Received UNSUBSCRIBE from 7491120c0bb0.bridge_broker3_to_broker2
+1761239194: 	broker3/sensor/#
+1761239194: 7491120c0bb0.bridge_broker3_to_broker2 broker3/sensor/#
+1761239194: Sending UNSUBACK to 7491120c0bb0.bridge_broker3_to_broker2
+1761239200: New connection from 172.19.0.2:47822 on port 8883.
+1761239200: New bridge connected from 172.19.0.2:47822 as 06a770f3b11b.bridge_broker1_to_broker2 (p2, c1, k60, u'broker').
+1761239200: No will message specified.
+1761239200: Sending CONNACK to 06a770f3b11b.bridge_broker1_to_broker2 (0, 0)
+1761239200: Received UNSUBSCRIBE from 06a770f3b11b.bridge_broker1_to_broker2
+1761239200: 	broker1/sensor/#
+1761239200: 06a770f3b11b.bridge_broker1_to_broker2 broker1/sensor/#
+1761239200: Sending UNSUBACK to 06a770f3b11b.bridge_broker1_to_broker2
+1761239203: Received PUBLISH from 06a770f3b11b.bridge_broker1_to_broker2 (d0, q0, r0, m0, 'broker1/sensor/wind', ... (56 bytes))
+1761239204: Received PUBLISH from 06a770f3b11b.bridge_broker1_to_broker2 (d0, q0, r0, m0, 'broker1/sensor/rain', ... (56 bytes))
+1761239206: Received PUBLISH from 06a770f3b11b.bridge_broker1_to_broker2 (d0, q0, r0, m0, 'broker1/sensor/rain', ... (56 bytes))
+1761239208: Received PUBLISH from 06a770f3b11b.bridge_broker1_to_broker2 (d0, q0, r0, m0, 'broker1/sensor/wind', ... (56 bytes))
+1761239210: Received PUBLISH from 06a770f3b11b.bridge_broker1_to_broker2 (d0, q0, r0, m0, 'broker1/sensor/wind', ... (56 bytes))
+1761239215: Received PUBLISH from 06a770f3b11b.bridge_broker1_to_broker2 (d0, q0, r0, m0, 'broker1/sensor/wind', ... (56 bytes))
+1761239217: Received PUBLISH from 06a770f3b11b.bridge_broker1_to_broker2 (d0, q0, r0, m0, 'broker1/sensor/rain', ... (56 bytes))
+1761239221: Received PUBLISH from 06a770f3b11b.bridge_broker1_to_broker2 (d0, q0, r0, m0, 'broker1/sensor/temp', ... (56 bytes))
+1761239223: Received PUBLISH from 06a770f3b11b.bridge_broker1_to_broker2 (d0, q0, r0, m0, 'broker1/sensor/wind', ... (56 bytes))
+1761239226: Received PUBLISH from 06a770f3b11b.bridge_broker1_to_broker2 (d0, q0, r0, m0, 'broker1/sensor/wind', ... (56 bytes))
+1761239229: Received PUBLISH from 06a770f3b11b.bridge_broker1_to_broker2 (d0, q0, r0, m0, 'broker1/sensor/rain', ... (56 bytes))
+1761239231: Received PUBLISH from 06a770f3b11b.bridge_broker1_to_broker2 (d0, q0, r0, m0, 'broker1/sensor/temp', ... (56 bytes))
+1761239234: Received PUBLISH from 06a770f3b11b.bridge_broker1_to_broker2 (d0, q0, r0, m0, 'broker1/sensor/rain', ... (56 bytes))
+1761239236: Received PUBLISH from 06a770f3b11b.bridge_broker1_to_broker2 (d0, q0, r0, m0, 'broker1/sensor/rain', ... (56 bytes))
+1761239251: New connection from 172.19.0.5:40262 on port 8883.
+1761239251: New client connected from 172.19.0.5:40262 as client1 (p2, c1, k60, u'mqtt.haproxy.lab').
+1761239251: No will message specified.
+1761239251: Sending CONNACK to client1 (0, 0)
+1761239251: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
+1761239251: Sending PUBLISH to local.2d9737a68e6a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
+1761239251: Sending PUBLISH to local.2d9737a68e6a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
+1761239254: Sending PINGREQ to local.2d9737a68e6a.bridge_broker2_to_broker1
+1761239254: Sending PINGREQ to local.2d9737a68e6a.bridge_broker2_to_broker3
+1761239254: Received PINGREQ from 7491120c0bb0.bridge_broker3_to_broker2
+1761239254: Sending PINGRESP to 7491120c0bb0.bridge_broker3_to_broker2
+1761239254: Received PINGRESP from local.2d9737a68e6a.bridge_broker2_to_broker1
+1761239254: Received PINGRESP from local.2d9737a68e6a.bridge_broker2_to_broker3
+1761239256: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
+1761239256: Sending PUBLISH to local.2d9737a68e6a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
+1761239256: Sending PUBLISH to local.2d9737a68e6a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
+1761239260: Received PINGREQ from 06a770f3b11b.bridge_broker1_to_broker2
+1761239260: Sending PINGRESP to 06a770f3b11b.bridge_broker1_to_broker2
+1761239260: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
+1761239260: Sending PUBLISH to local.2d9737a68e6a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
+1761239260: Sending PUBLISH to local.2d9737a68e6a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
+1761239264: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
+1761239264: Sending PUBLISH to local.2d9737a68e6a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
+1761239264: Sending PUBLISH to local.2d9737a68e6a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
+1761239266: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
+1761239266: Sending PUBLISH to local.2d9737a68e6a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
+1761239266: Sending PUBLISH to local.2d9737a68e6a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
+1761239268: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
+1761239268: Sending PUBLISH to local.2d9737a68e6a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
+1761239268: Sending PUBLISH to local.2d9737a68e6a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
+1761239272: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
+1761239272: Sending PUBLISH to local.2d9737a68e6a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
+1761239272: Sending PUBLISH to local.2d9737a68e6a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
+1761239273: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
+1761239273: Sending PUBLISH to local.2d9737a68e6a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
+1761239273: Sending PUBLISH to local.2d9737a68e6a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
+1761239274: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
+1761239274: Sending PUBLISH to local.2d9737a68e6a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
+1761239274: Sending PUBLISH to local.2d9737a68e6a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
+1761239276: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
+1761239276: Sending PUBLISH to local.2d9737a68e6a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
+1761239276: Sending PUBLISH to local.2d9737a68e6a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
+1761239277: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/wind', ... (56 bytes))
+1761239277: Sending PUBLISH to local.2d9737a68e6a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
+1761239277: Sending PUBLISH to local.2d9737a68e6a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/wind', ... (56 bytes))
+1761239278: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
+1761239278: Sending PUBLISH to local.2d9737a68e6a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
+1761239278: Sending PUBLISH to local.2d9737a68e6a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
+1761239283: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
+1761239283: Sending PUBLISH to local.2d9737a68e6a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
+1761239283: Sending PUBLISH to local.2d9737a68e6a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
+1761239284: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
+1761239284: Sending PUBLISH to local.2d9737a68e6a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
+1761239284: Sending PUBLISH to local.2d9737a68e6a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
+1761239286: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/rain', ... (56 bytes))
+1761239286: Sending PUBLISH to local.2d9737a68e6a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
+1761239286: Sending PUBLISH to local.2d9737a68e6a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/rain', ... (56 bytes))
+1761239289: Received PUBLISH from client1 (d0, q0, r0, m0, 'sensor/temp', ... (56 bytes))
+1761239289: Sending PUBLISH to local.2d9737a68e6a.bridge_broker2_to_broker1 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
+1761239289: Sending PUBLISH to local.2d9737a68e6a.bridge_broker2_to_broker3 (d0, q0, r0, m0, 'broker2/sensor/temp', ... (56 bytes))
+1761239293: Received DISCONNECT from client1
+1761239293: Client client1 disconnected.
+1761239314: Sending PINGREQ to local.2d9737a68e6a.bridge_broker2_to_broker1
+1761239314: Sending PINGREQ to local.2d9737a68e6a.bridge_broker2_to_broker3
+1761239314: Received PINGRESP from local.2d9737a68e6a.bridge_broker2_to_broker1
+1761239314: Received PINGREQ from 7491120c0bb0.bridge_broker3_to_broker2
+1761239314: Sending PINGRESP to 7491120c0bb0.bridge_broker3_to_broker2
+1761239314: Received PINGRESP from local.2d9737a68e6a.bridge_broker2_to_broker3
+1761239320: Received PINGREQ from 06a770f3b11b.bridge_broker1_to_broker2
+1761239320: Sending PINGRESP to 06a770f3b11b.bridge_broker1_to_broker2

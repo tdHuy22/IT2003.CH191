@@ -111,7 +111,7 @@ fi
 
 # Kiểm tra trạng thái Ethernet
 echo "Kiểm tra trạng thái Ethernet..."
-if nmcli -f NAME,DEVICE --active | grep -q eth0-lan; then
+if nmcli -f NAME,DEVICE con show --active | grep -q eth0-lan; then
     echo "Kết nối Ethernet eth0-lan đã được kích hoạt."
 else
     echo "Lỗi: Không thể kích hoạt kết nối eth0-lan. Kiểm tra log: journalctl -u NetworkManager"

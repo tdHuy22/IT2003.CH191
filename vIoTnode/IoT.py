@@ -32,14 +32,15 @@ import paho.mqtt.client as mqtt
 from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 # --- Config / env ---
-BROKER_HOST = os.getenv("MQTT_BROKER_HOST")
-BROKER_PORT = int(os.getenv("MQTT_BROKER_PORT"))
+BROKER_HOST = os.getenv("MQTT_BROKER_HOST", "127.0.0.1")
+BROKER_PORT = int(os.getenv("MQTT_BROKER_PORT", 1883))
 CLIENT_CERT = os.getenv("MQTT_CLIENT_CERT")
 CLIENT_KEY = os.getenv("MQTT_CLIENT_KEY")
 CA_CERT = os.getenv("MQTT_CA_CERT")
 
-if not CLIENT_CERT or not CLIENT_KEY or not CA_CERT:
-    raise SystemExit("Please set MQTT_CLIENT_CERT, MQTT_CLIENT_KEY and MQTT_CA_CERT env vars")
+if BROKER_PORT == 8883:
+    if not CLIENT_CERT or not CLIENT_KEY or not CA_CERT:
+        raise SystemExit("Please set MQTT_CLIENT_CERT, MQTT_CLIENT_KEY and MQTT_CA_CERT env vars")
 
 # Shared symmetric key (base64) - must be 32 bytes when decoded
 SHARED_KEY_B64 = os.getenv("SHARED_KEY_B64")
@@ -98,17 +99,29 @@ def create_mqtt_client() -> mqtt.Client:
     client.on_disconnect = on_disconnect
     client.on_publish = on_publish
 
-    # TLS / mTLS setup
-    # Set TLS options; verify server cert with CA, and present client cert/key
-    tls_context = ssl.create_default_context(ssl.Purpose.SERVER_AUTH, cafile=CA_CERT)
-    tls_context.load_cert_chain(certfile=CLIENT_CERT, keyfile=CLIENT_KEY)
-    # Optionally enforce TLS versions etc:
-    tls_context.options |= ssl.OP_NO_TLSv1 | ssl.OP_NO_TLSv1_1
+    # # TLS / mTLS setup
+    # # Set TLS options; verify server cert with CA, and present client cert/key
+    # tls_context = ssl.create_default_context(ssl.Purpose.SERVER_AUTH, cafile=CA_CERT)
+    # tls_context.load_cert_chain(certfile=CLIENT_CERT, keyfile=CLIENT_KEY)
+    # # Optionally enforce TLS versions etc:
+    # tls_context.options |= ssl.OP_NO_TLSv1 | ssl.OP_NO_TLSv1_1
 
-    client.tls_set_context(tls_context)
+    # client.tls_set_context(tls_context)
 
-    # Enforce hostname check (default)
-    client.tls_insecure_set(False)
+    # # Enforce hostname check (default)
+    # client.tls_insecure_set(False)
+#=========================================================================================#
+    # TLS / mTLS setup only for port 8883
+    if BROKER_PORT == 8883:
+        # Set TLS options; verify server cert with CA, and present client cert/key
+        tls_context = ssl.create_default_context(ssl.Purpose.SERVER_AUTH, cafile=CA_CERT)
+        tls_context.load_cert_chain(certfile=CLIENT_CERT, keyfile=CLIENT_KEY)
+        # Enforce TLSv1.2 or higher (match Mosquitto bridge_tls_version tlsv1.3)
+        tls_context.minimum_version = ssl.TLSVersion.TLSv1_2
+        client.tls_set_context(tls_context)
+        # Enforce hostname check (default)
+        client.tls_insecure_set(False)
+        logger.info("TLS enabled for port 8883")
 
     return client
 
@@ -148,7 +161,7 @@ def publish_loop(client: mqtt.Client, interval_range: Tuple[float, float] = (1.0
 def main():
     client = create_mqtt_client()
     # connect (blocking)
-    logger.info(f"Connecting to {BROKER_HOST}:{BROKER_PORT} with mTLS")
+    logger.info(f"Connecting to {BROKER_HOST}:{BROKER_PORT}{' with mTLS' if BROKER_PORT == 8883 else ''}")
     client.connect(BROKER_HOST, BROKER_PORT, keepalive=60)
     client.loop_start()
     try:
