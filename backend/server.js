@@ -59,7 +59,7 @@ app.get("/api/logs/:type", (req, res) => {
 // ===== MQTT Config =====
 const mqttOptions = {
   clientId: "backend-subscriber",
-  ca: fs.readFileSync("/app/certs/express/ca_org.crt"),
+  ca: fs.readFileSync("/app/certs/express/ca_bundle.crt"),
   key: fs.readFileSync("/app/certs/express/express.key"),
   cert: fs.readFileSync("/app/certs/express/express.crt"),
   rejectUnauthorized: true,

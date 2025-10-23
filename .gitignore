@@ -1,3 +1,4 @@
 vIoTnode/.venv
 frontend/.vscode
 backend/logs
+.gitignore
