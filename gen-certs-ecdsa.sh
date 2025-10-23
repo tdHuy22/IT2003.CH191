@@ -14,7 +14,7 @@ basicConstraints = critical,CA:true
 keyUsage = critical, digitalSignature, cRLSign, keyCertSign
 EOF
 
-openssl ecparam -name secp384r1 -genkey -noout -out ca_org.key
+openssl ecparam -name prime256v1 -genkey -noout -out ca_org.key
 openssl req -new -x509 -days 3650 -key ca_org.key \
   -subj "/C=VN/ST=HCM/L=HCM/O=LabCA/CN=LabCA" \
   -sha256 -out ca_org.crt \
@@ -24,7 +24,7 @@ echo "✅ Generated CA cert: ca_org.crt"
 
 # Tạo cert chung cho 3 broker với SAN chứa các IP LAN
 echo "Generating shared broker cert with LAN IPs..."
-openssl ecparam -name secp256r1 -genkey -noout -out broker.key
+openssl ecparam -name prime256v1 -genkey -noout -out broker.key
 openssl req -new -key broker.key -subj "/CN=broker" -out broker.csr
 
 # SAN cho broker bao gồm cả IP LAN
@@ -45,7 +45,7 @@ openssl x509 -req -in broker.csr -CA ca_org.crt -CAkey ca_org.key -CAcreateseria
   -out broker.crt -days 825 -sha256 -extfile broker_san.cnf -extensions v3_req
 
 echo "Generating haproxy cert (for TLS re-encryption)..."
-openssl ecparam -name secp256r1 -genkey -noout -out haproxy_backend.key
+openssl ecparam -name prime256v1 -genkey -noout -out haproxy_backend.key
 openssl req -new -key haproxy_backend.key -subj "/CN=mqtt.haproxy.lab" -out haproxy_backend.csr
 
 # HAProxy có SAN với IP LAN 10.0.0.10
@@ -64,7 +64,7 @@ openssl x509 -req -in haproxy_backend.csr -CA ca_org.crt -CAkey ca_org.key -CAcr
   -out haproxy_backend.crt -days 825 -sha256 -extfile haproxy_san.cnf -extensions v3_req
 
 echo "Generating backend certs..."
-openssl ecparam -name secp256r1 -genkey -noout -out express.key
+openssl ecparam -name prime256v1 -genkey -noout -out express.key
 openssl req -new -key express.key -subj "/CN=express.lab" -out express.csr
 openssl x509 -req -in express.csr -CA ca_org.crt -CAkey ca_org.key -CAcreateserial \
   -out express.crt -days 825 -sha256
@@ -79,7 +79,7 @@ basicConstraints = critical,CA:true
 keyUsage = critical, digitalSignature, cRLSign, keyCertSign
 EOF
 
-openssl ecparam -name secp384r1 -genkey -noout -out ca_client.key
+openssl ecparam -name prime256v1 -genkey -noout -out ca_client.key
 openssl req -new -x509 -days 3650 -key ca_client.key \
   -subj "/C=VN/ST=HCM/L=HCM/O=IoTCA/CN=IoTCA" \
   -sha256 -out ca_client.crt \
@@ -88,14 +88,14 @@ openssl req -new -x509 -days 3650 -key ca_client.key \
 echo "✅ Generated client CA cert: ca_client.crt"
 
 echo "Generating client certs..."
-openssl ecparam -name secp256r1 -genkey -noout -out haproxy_frontend.key
+openssl ecparam -name prime256v1 -genkey -noout -out haproxy_frontend.key
 openssl req -new -key haproxy_frontend.key -subj "/CN=haproxy_frontend.lab" -out haproxy_frontend.csr
 openssl x509 -req -in haproxy_frontend.csr -CA ca_client.crt -CAkey ca_client.key -CAcreateserial \
   -out haproxy_frontend.crt -days 825 -sha256 -extfile haproxy_san.cnf -extensions v3_req
 
 echo "Generating 3 IoT client certs..."
 for i in 1 2 3; do
-  openssl ecparam -name secp256r1 -genkey -noout -out client${i}.key
+  openssl ecparam -name prime256v1 -genkey -noout -out client${i}.key
   openssl req -new -key client${i}.key -subj "/CN=device-${i}" -out client${i}.csr
   openssl x509 -req -in client${i}.csr -CA ca_client.crt -CAkey ca_client.key -CAcreateserial \
     -out client${i}.crt -days 825 -sha256
