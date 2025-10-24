@@ -1,0 +1,146 @@
+services:
+  haproxy:
+    image: haproxy:latest
+    container_name: haproxy
+    restart: unless-stopped
+    ports:
+      - "1883:1883"
+      - "8883:8888"
+      - "127.0.0.1:8404:8404" # stats
+      - "127.0.0.1:18884:18884"
+    volumes:
+      - ./mqtt-layer/haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
+      - ./certs/haproxy_backend:/usr/local/etc/haproxy/certs_backend
+      - ./certs/haproxy_frontend:/usr/local/etc/haproxy/certs_frontend
+    networks:
+      - iot_net
+    depends_on:
+      broker1:
+        condition: service_healthy
+      broker2:
+        condition: service_healthy
+      broker3:
+        condition: service_healthy
+  broker1:
+    image: emqx/emqx:5.8
+    container_name: broker1
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:18083:18083"
+    environment:
+      - EMQX_NODE__NAME=emqx@broker1.local
+      - EMQX_CLUSTER__STATIC__SEEDS=emqx@broker1.local,emqx@broker2.local,emqx@broker3.local
+      - EMQX_NODE__COOKIE=emqx-cookie
+      - EMQX_NODE__DATA_DIR=/opt/emqx/data
+      - EMQX_CLUSTER__DISCOVERY_STRATEGY=static
+      - EMQX_LISTENER__TCP__EXTERNAL=1883
+      - EMQX_LISTENER__SSL__EXTERNAL=8883
+      - EMQX_LISTENER__SSL__EXTERNAL__VERIFY=verify_peer
+      - EMQX_LISTENER__SSL__EXTERNAL__CACERTFILE=/opt/emqx/certs/ca_bundle.crt
+      - EMQX_LISTENER__SSL__EXTERNAL__CERTFILE=/opt/emqx/certs/broker.crt
+      - EMQX_LISTENER__SSL__EXTERNAL__KEYFILE=/opt/emqx/certs/broker.key
+    volumes:
+      - ./mqtt-layer/broker1/emqx.conf:/opt/emqx/etc/emqx.conf
+      - ./mqtt-layer/broker1/data:/opt/emqx/data
+      - ./mqtt-layer/broker1/log:/opt/emqx/log
+      - ./certs/broker:/opt/emqx/certs
+    networks:
+      iot_net:
+        aliases:
+          - broker1.local
+    healthcheck:
+      test: ["CMD", "emqx", "ctl", "status"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+  broker2:
+    image: emqx/emqx:5.8
+    container_name: broker2
+    restart: unless-stopped
+    environment:
+      - EMQX_NODE__NAME=emqx@broker2.local
+      - EMQX_CLUSTER__STATIC__SEEDS=emqx@broker1.local,emqx@broker2.local,emqx@broker3.local
+      - EMQX_NODE__COOKIE=emqx-cookie
+      - EMQX_NODE__DATA_DIR=/opt/emqx/data
+      - EMQX_CLUSTER__DISCOVERY_STRATEGY=static
+      - EMQX_LISTENER__TCP__EXTERNAL=1883
+      - EMQX_LISTENER__SSL__EXTERNAL=8883
+      - EMQX_LISTENER__SSL__EXTERNAL__VERIFY=verify_peer
+      - EMQX_LISTENER__SSL__EXTERNAL__CACERTFILE=/opt/emqx/certs/ca_bundle.crt
+      - EMQX_LISTENER__SSL__EXTERNAL__CERTFILE=/opt/emqx/certs/broker.crt
+      - EMQX_LISTENER__SSL__EXTERNAL__KEYFILE=/opt/emqx/certs/broker.key
+    volumes:
+      - ./mqtt-layer/broker2/emqx.conf:/opt/emqx/etc/emqx.conf
+      - ./mqtt-layer/broker2/data:/opt/emqx/data
+      - ./mqtt-layer/broker2/log:/opt/emqx/log
+      - ./certs/broker:/opt/emqx/certs
+    networks:
+      iot_net:
+        aliases:
+          - broker2.local
+    healthcheck:
+      test: ["CMD", "emqx", "ctl", "status"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+  broker3:
+    image: emqx/emqx:5.8
+    container_name: broker3
+    restart: unless-stopped
+    environment:
+      - EMQX_NODE__NAME=emqx@broker3.local
+      - EMQX_CLUSTER__STATIC__SEEDS=emqx@broker1.local,emqx@broker2.local,emqx@broker3.local
+      - EMQX_NODE__COOKIE=emqx-cookie
+      - EMQX_NODE__DATA_DIR=/opt/emqx/data
+      - EMQX_CLUSTER__DISCOVERY_STRATEGY=static
+      - EMQX_LISTENER__TCP__EXTERNAL=1883
+      - EMQX_LISTENER__SSL__EXTERNAL=8883
+      - EMQX_LISTENER__SSL__EXTERNAL__VERIFY=verify_peer
+      - EMQX_LISTENER__SSL__EXTERNAL__CACERTFILE=/opt/emqx/certs/ca_bundle.crt
+      - EMQX_LISTENER__SSL__EXTERNAL__CERTFILE=/opt/emqx/certs/broker.crt
+      - EMQX_LISTENER__SSL__EXTERNAL__KEYFILE=/opt/emqx/certs/broker.key
+    volumes:
+      - ./mqtt-layer/broker3/emqx.conf:/opt/emqx/etc/emqx.conf
+      - ./mqtt-layer/broker3/data:/opt/emqx/data
+      - ./mqtt-layer/broker3/log:/opt/emqx/log
+      - ./certs/broker:/opt/emqx/certs
+    networks:
+      iot_net:
+        aliases:
+          - broker3.local
+    healthcheck:
+      test: ["CMD", "emqx", "ctl", "status"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  backend:
+    build: ./backend
+    container_name: backend
+    restart: unless-stopped
+    volumes:
+      - ./certs/express:/app/certs/express:ro
+      - ./backend/logs:/app/logs
+    depends_on:
+      haproxy:
+        condition: service_started
+    environment:
+      - NODE_ENV=production
+      - AES_SHARED_KEY=I5040PMqS3Xf027QdzLRaD61mb6COAPP6eWQAgiWqnY=
+      - AAD=iot-lab-shared
+    networks:
+      - iot_net
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8080:80"
+    depends_on:
+      - backend
+    networks:
+      - iot_net
+
+networks:
+  iot_net:
+    driver: bridge

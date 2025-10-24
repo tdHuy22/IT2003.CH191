@@ -1,4 +1,6 @@
 vIoTnode/.venv
 frontend/.vscode
-backend/logs
+backend/logs/*
 .gitignore
+mqtt-layer/*/data/*
+mqtt-layer/*/log/*

@@ -61,8 +61,6 @@ services:
       - ./backend/logs:/app/logs
     depends_on:
       - haproxy
-    ports:
-      - "127.0.0.1:3001:3001"
     environment:
       - NODE_ENV=production
       - AES_SHARED_KEY=I5040PMqS3Xf027QdzLRaD61mb6COAPP6eWQAgiWqnY=

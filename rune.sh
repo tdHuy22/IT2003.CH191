@@ -11,4 +11,4 @@ echo "Clean up old docker containers..."
 docker compose down --volumes --remove-orphans
 
 echo "Running docker-compose..."
-docker compose -f docker-compose.yml up
+docker compose -f docker-compose.emqx.yml up
