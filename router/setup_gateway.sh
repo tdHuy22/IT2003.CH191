@@ -92,6 +92,7 @@ iptables -A INPUT -p icmp --icmp-type echo-request -j ACCEPT
 iptables -A INPUT -p icmp --icmp-type echo-reply -j ACCEPT
 iptables -P INPUT DROP
 iptables -A FORWARD -i wlan0 -o eth0 -p tcp --dport 8883 -j ACCEPT
+iptables -A FORWARD -i wlan0 -o eth0 -p tcp --dport 1883 -j ACCEPT
 iptables -A FORWARD -i wlan0 -o eth0 -p icmp --icmp-type echo-request -j ACCEPT
 iptables -A FORWARD -i eth0 -o wlan0 -p icmp --icmp-type echo-reply -j ACCEPT
 iptables -A FORWARD -i eth0 -o wlan0 -p icmp --icmp-type echo-request -j ACCEPT
