@@ -151,7 +151,8 @@ def publish_loop(client: mqtt.Client, interval_range: Tuple[float, float] = (1.0
                 logger.error("Publish exception: %s", e)
 
             # sleep random interval
-            sleep_t = random.uniform(interval_range[0], interval_range[1])
+            # sleep_t = random.uniform(interval_range[0], interval_range[1])
+            sleep_t = 0
             time.sleep(sleep_t)
 
     except KeyboardInterrupt:
